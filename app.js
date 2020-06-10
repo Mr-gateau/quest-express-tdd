@@ -33,6 +33,8 @@ console.log(id)
   connection.query(`SELECT title, url FROM bookmark where id = ${id}`, (err, resultats) => {
     if(err){
       return res.status(404).json({error: 'Bookmark not found'})
+    }else if(resultats.length === 0){
+                res.status(404).json({ "error": "Bookmark not found" });
     }else{
     return res.json(resultats[0]);
   }

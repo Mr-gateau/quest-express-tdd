@@ -53,7 +53,7 @@ describe('Test routes', () => {
   ));
   it("GET /bookmarks/:id - don't exist", (done) => {
     request(app)
-    .get('/bookmarks/x')
+    .get('/bookmarks/4')
     .expect(404)
     .then(response => {
       const expected = { error: 'Bookmark not found' };
