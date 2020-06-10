@@ -15,3 +15,15 @@ describe('Test routes', () => {
       });
   });
 });
+
+describe('Test route post', () => {
+  it('POST / run good', (done) => {
+    request(app)
+      .post('/bookmark')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .then ( response => {
+          done();
+      })
+  });
+});
