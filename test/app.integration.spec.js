@@ -64,7 +64,6 @@ describe('Test routes', () => {
 it("GET /bookmarks/:id - find !", (done) => {
   request(app)
   .get('/bookmarks/1')
-  .send({id : '1'})
   .expect(200)
   .then(response => {
     const expected = { url: 'https://nodejs.org/', title: 'Node.js' };
